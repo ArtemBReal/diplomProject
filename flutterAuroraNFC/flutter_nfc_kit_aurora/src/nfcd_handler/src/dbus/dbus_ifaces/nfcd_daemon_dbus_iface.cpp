@@ -6,7 +6,8 @@ NfcdDaemonDBusIface::NfcdDaemonDBusIface(QObject *parent) :
     NfcdConstants::nfcdPath, 
     NfcdConstants::nfcdDaemonIface, 
     QDBusConnection::systemBus(), parent){ 
-
+        
+    //empty
 }
 
 
@@ -22,7 +23,6 @@ QDBusPendingReply<QList<QDBusObjectPath>> NfcdDaemonDBusIface::GetAdapters() {
      return asyncCallWithArgumentList(QStringLiteral("GetAdapters"), QList<QVariant>());
 }
 
-QDBusPendingReply<quint8> NfcdDaemonDBusIface::GetMode()
-{
+QDBusPendingReply<quint8> NfcdDaemonDBusIface::GetMode() {
     return asyncCallWithArgumentList(QStringLiteral("GetMode"), QList<QVariant>());
 }

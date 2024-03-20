@@ -2,6 +2,8 @@
     "files.associations": {
         "qabstractlistmodel": "cpp",
         "qobject": "cpp",
-        "qdbuspendingreply": "cpp"
-    }
+        "qdbuspendingreply": "cpp",
+        "qdbusabstractinterface": "cpp"
+    },
+    "cmake.configureOnOpen": false
 }

@@ -6,7 +6,7 @@
                 "${workspaceFolder}/**",
                 "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/**",
                 "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/glib-2.0",
-                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/lib/include",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/lib/**",
                 "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/sailfishapp",
                 "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/qt5",
                 "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/qt5/QtConcurrent",
@@ -27,4 +27,3 @@
     ],
     "version": 4
 }
-
