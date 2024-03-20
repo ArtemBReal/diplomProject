@@ -1,0 +1,7 @@
+<node>
+    <interface name = "org.sailfishos.nfc.Daemon">
+        <method name = "GetInterfaceVersion">
+            <arg name="output" type="u" direction="out" /> 
+        </method>
+    </interface>
+</node>

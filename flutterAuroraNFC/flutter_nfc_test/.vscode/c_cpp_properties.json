@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/**",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/glib-2.0",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/**"
+            ],
+            "defines": [
+                "__ARM_PCS_VFP"
+            ],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

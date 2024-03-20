@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "qabstractlistmodel": "cpp",
+        "qobject": "cpp",
+        "qdbuspendingreply": "cpp"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/**",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/glib-2.0",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/lib/include",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/sailfishapp",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/qt5",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/qt5/QtConcurrent",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/qt5/QtCore",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/qt5/QtDBus",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/qt5/QtGui",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/qt5/QtMultimedia",
+                "/home/artem/SDK/Aurora/targets/AuroraOS-4.0.2.303-base-armv7hl.default/usr/include/qt5/QtQuick"
+            ],
+            "defines": [
+                "__ARM_PCS_VFP"
+            ],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
+
