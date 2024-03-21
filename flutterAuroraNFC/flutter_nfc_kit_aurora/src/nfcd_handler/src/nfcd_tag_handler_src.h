@@ -19,7 +19,7 @@ public:
     QString interfaceVersion();
     bool present();
     NfcdTagProtocol protocol();
-    NfcdTagTechnologies technology();
+    NfcdTagTechnology technology();
     quint32 type();
     QStringList interfaces();
     QStringList ndefRecords();
