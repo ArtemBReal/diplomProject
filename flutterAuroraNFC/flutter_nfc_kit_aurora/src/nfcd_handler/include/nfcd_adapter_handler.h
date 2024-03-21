@@ -14,7 +14,7 @@ class NfcdTagsModel : public QAbstractListModel {
 
 public:
     explicit NfcdTagsModel(QObject *parent = nullptr) = delete;
-    NfcdTagsModel(NfcdTagsModelPrivate **data, QObject *parent = nullptr);
+    NfcdTagsModel(NfcdTagsModelPrivate *data, QObject *parent = nullptr);
 
     QHash<int, QByteArray> roleNames() const override;
     QVariant data (const QModelIndex &index, int role) const override;
@@ -46,8 +46,8 @@ public:
     void setAdapterPath(const QString &adapterPath);
 
     QString interfaceVersion();
-    bool enabled;
-    bool powered;
+    bool enabled();
+    bool powered();
     bool targetPresent();
     NfcdModes supportedModes();
     NfcdMode mode();

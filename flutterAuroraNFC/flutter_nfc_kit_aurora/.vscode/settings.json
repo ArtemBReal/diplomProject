@@ -3,7 +3,8 @@
         "qabstractlistmodel": "cpp",
         "qobject": "cpp",
         "qdbuspendingreply": "cpp",
-        "qdbusabstractinterface": "cpp"
+        "qdbusabstractinterface": "cpp",
+        "qsharedpointer": "cpp"
     },
     "cmake.configureOnOpen": false
 }

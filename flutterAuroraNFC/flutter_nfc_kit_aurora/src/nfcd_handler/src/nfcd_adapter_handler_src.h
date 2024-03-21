@@ -28,7 +28,7 @@ public:
 
     QHash<int, QByteArray> roleNames() const;
     QVariant data(const QModelIndex &index, int role) const;
-    int rowCOunt(const QModelIndex &parent) const;
+    int rowCount(const QModelIndex &parent) const;
 
 private slots:
     void updateTags(const QList<QDBusObjectPath> &tags);
@@ -50,7 +50,7 @@ public:
     void setAdapterPath(const QString &adapterPath);
 
     QString interfaceVesrion();
-    bool enbled();
+    bool enabled();
     bool powered();
     bool targetPresent();
     NfcdModes supportedModes();
