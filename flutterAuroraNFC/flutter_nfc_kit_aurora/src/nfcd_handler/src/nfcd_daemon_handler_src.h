@@ -35,7 +35,7 @@ private slots:
 private:
     NfcdAdaptersModel *m_parent { nullptr };
     NfcdDaemonDBusIface *m_daemon { nullptr };
-    QMap<QString, QSharedPointer<NfcdAdapterDBusIface>> m_dapters {};
+    QMap<QString, QSharedPointer<NfcdAdapterDBusIface>> m_adapters {};
     QHash<int, QByteArray> m_roleNames {};
 };
 

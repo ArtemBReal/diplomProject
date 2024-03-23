@@ -27,44 +27,32 @@ class FlutterNfcKitAuroraBindings {
           lookup)
       : _lookup = lookup;
 
-  /// A very short-lived native function.
-  ///
-  /// For very short-lived functions, it is fine to call them on the main isolate.
-  /// They will block the Dart execution while running the native function, so
-  /// only do this for native functions which are guaranteed to be short-lived.
-  int sum(
-    int a,
-    int b,
-  ) {
-    return _sum(
-      a,
-      b,
-    );
-  }
+  late final ffi.Pointer<ffi.Int> _NfcdAdaptersModel =
+      _lookup<ffi.Int>('NfcdAdaptersModel');
 
-  late final _sumPtr =
-      _lookup<ffi.NativeFunction<ffi.IntPtr Function(ffi.IntPtr, ffi.IntPtr)>>(
-          'sum');
-  late final _sum = _sumPtr.asFunction<int Function(int, int)>();
+  int get NfcdAdaptersModel => _NfcdAdaptersModel.value;
 
-  /// A longer lived native function, which occupies the thread calling it.
-  ///
-  /// Do not call these kind of native functions in the main isolate. They will
-  /// block Dart execution. This will cause dropped frames in Flutter applications.
-  /// Instead, call these native functions on a separate isolate.
-  int sum_long_running(
-    int a,
-    int b,
-  ) {
-    return _sum_long_running(
-      a,
-      b,
-    );
-  }
+  set NfcdAdaptersModel(int value) => _NfcdAdaptersModel.value = value;
 
-  late final _sum_long_runningPtr =
-      _lookup<ffi.NativeFunction<ffi.IntPtr Function(ffi.IntPtr, ffi.IntPtr)>>(
-          'sum_long_running');
-  late final _sum_long_running =
-      _sum_long_runningPtr.asFunction<int Function(int, int)>();
+  late final ffi.Pointer<ffi.Int> _NfcdAdaptersModelPrivate =
+      _lookup<ffi.Int>('NfcdAdaptersModelPrivate');
+
+  int get NfcdAdaptersModelPrivate => _NfcdAdaptersModelPrivate.value;
+
+  set NfcdAdaptersModelPrivate(int value) =>
+      _NfcdAdaptersModelPrivate.value = value;
+
+  late final ffi.Pointer<ffi.Int> _QObject = _lookup<ffi.Int>('QObject');
+
+  int get QObject => _QObject.value;
+
+  set QObject(int value) => _QObject.value = value;
+
+  late final ffi.Pointer<ffi.Int> _NfcdDaemonHandlerPrivate =
+      _lookup<ffi.Int>('NfcdDaemonHandlerPrivate');
+
+  int get NfcdDaemonHandlerPrivate => _NfcdDaemonHandlerPrivate.value;
+
+  set NfcdDaemonHandlerPrivate(int value) =>
+      _NfcdDaemonHandlerPrivate.value = value;
 }

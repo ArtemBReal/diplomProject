@@ -7,9 +7,11 @@ description: |
 output: 'lib/flutter_nfc_kit_aurora_bindings_generated.dart'
 headers:
   entry-points:
-    - 'src/flutter_nfc_kit_aurora.h'
+    #- 'src/flutter_nfc_kit_aurora.h'
+    - 'src/nfcd_handler/src/nfcd_daemon_handler_src.h'
   include-directives:
-    - 'src/flutter_nfc_kit_aurora.h'
+    #- 'src/flutter_nfc_kit_aurora.h'
+    - 'src/nfcd_handler/src/nfcd_daemon_handler_src.h'
 preamble: |
   // ignore_for_file: always_specify_types
   // ignore_for_file: camel_case_types

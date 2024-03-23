@@ -41,7 +41,7 @@ public:
 
     QString interfaceVersion();
     QString daemonVersion();
-    NfcdAdaptersModel *adaptersModel;
+    NfcdAdaptersModel *adaptersModel();
     
 private: 
     QSharedPointer<NfcdDaemonHandlerPrivate> m_data { nullptr };

@@ -18,6 +18,8 @@ dependencies:
       ref: 
       path: device_platform_interface
 
+BuildRequires: pkgconfig(Qt5Core)
+
 dev_dependencies:
   ffi: ^2.0.2
   ffigen: ^9.0.0
