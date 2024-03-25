@@ -236,3 +236,6 @@ NfcdMode NfcdAdapterHandler::mode(){
 NfcdTagsModel *NfcdAdapterHandler::tagsModel(){
     return m_data->tagsModel();
 }
+
+#include "moc_nfcd_adapter_handler_src.cpp"
+#include "moc_nfcd_adapter_handler.cpp"

@@ -61,3 +61,5 @@ QDBusPendingReply<QByteArray> NfcdTagDBusIface::Transceive(const QByteArray &dat
     };
     return asyncCallWithArgumentList(QStringLiteral("Transceive"), arguments);
 }
+
+#include "moc_nfcd_tag_dbus_iface.cpp"

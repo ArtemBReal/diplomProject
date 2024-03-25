@@ -153,3 +153,6 @@ QByteArray NfcdNdefHandler::rawData(){
 QStringList NfcdNdefHandler::interfaces(){
     return m_data->interfaces();
 }
+
+#include "moc_nfcd_ndef_handler_src.cpp"
+#include "moc_nfcd_ndef_handler.cpp"

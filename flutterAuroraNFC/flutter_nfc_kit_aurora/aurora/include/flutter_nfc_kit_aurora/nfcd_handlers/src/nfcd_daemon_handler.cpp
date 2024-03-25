@@ -35,14 +35,14 @@ void NfcdAdaptersModelPrivate::updateAdapters(const QList<QDBusObjectPath> &adap
         QSharedPointer<NfcdAdapterDBusIface> adapterPtr(new NfcdAdapterDBusIface(adapterPath));
         m_adapters.insert(adapterPath, adapterPtr);
 
-        connect(adapterPtr.data(), NfcdAdapterDBusIface::EnabledChanged,
+        connect(adapterPtr.data(), &NfcdAdapterDBusIface::EnabledChanged,
                 [this]() {
                     if (m_parent){
                         m_parent->beginResetModel();
                         m_parent->endResetModel();
                     }
                 });
-        connect(adapterPtr.data(), NfcdAdapterDBusIface::PoweredChanged,
+        connect(adapterPtr.data(), &NfcdAdapterDBusIface::PoweredChanged,
                 [this]() {
                     if (m_parent){
                         m_parent->beginResetModel();
@@ -156,3 +156,6 @@ QString NfcdDaemonHandler::daemonVersion(){
 NfcdAdaptersModel *NfcdDaemonHandler::adaptersModel(){
     return m_data->adaptersModel();
 }
+
+#include "moc_nfcd_daemon_handler_src.cpp"
+#include "moc_nfcd_daemon_handler.cpp"

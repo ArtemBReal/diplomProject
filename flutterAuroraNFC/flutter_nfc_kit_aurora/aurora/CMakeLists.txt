@@ -20,11 +20,34 @@ find_package(PkgConfig REQUIRED)
 find_package(Qt5 COMPONENTS Core DBus REQUIRED)
 pkg_check_modules(FlutterEmbedder REQUIRED IMPORTED_TARGET flutter-embedder)
 
-add_library(${PLUGIN_NAME} SHARED flutter_nfc_kit_aurora_plugin.cpp)
+set(SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/flutter_nfc_kit_aurora_plugin.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/nfcd_isodep_handler.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/dbus_ifaces/nfcd_tag_dbus_iface.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/dbus_ifaces/nfcd_ndef_dbus_iface.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/dbus_ifaces/nfcd_daemon_dbus_iface.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/dbus_ifaces/nfcd_tagtype2_dbus_iface.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/dbus_ifaces/nfcd_adapter_dbus_iface.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/dbus_ifaces/nfcd_isodep_dbus_iface.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/nfcd_constants.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/nfcd_tagtype2_handler.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/nfcd_ndef_handler.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/nfcd_tag_handler.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/nfcd_adapter_handler.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/nfcd_daemon_handler.cpp)
+
+set(INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}/include
+             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}
+             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/headers
+             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus
+             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/dbus_ifaces/headers
+             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/handlers_headers
+             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers)
+
+add_library(${PLUGIN_NAME} SHARED ${SOURCES})
 
 set_target_properties(${PLUGIN_NAME} PROPERTIES CXX_VISIBILITY_PRESET hidden AUTOMOC ON)
 target_link_libraries(${PLUGIN_NAME} PRIVATE PkgConfig::FlutterEmbedder)
-target_link_libraries(${PLUGIN_NAME} PUBLIC Qt5::Core Qt5::DBus) 
+target_link_libraries(${PLUGIN_NAME} PUBLIC Qt5::Core Qt5::DBus)
 
-target_include_directories(${PLUGIN_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(${PLUGIN_NAME} PUBLIC ${INCLUDES})
 target_compile_definitions(${PLUGIN_NAME} PRIVATE PLUGIN_IMPL)

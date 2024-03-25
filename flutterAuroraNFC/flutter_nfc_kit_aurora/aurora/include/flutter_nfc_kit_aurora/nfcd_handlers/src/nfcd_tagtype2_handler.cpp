@@ -142,3 +142,6 @@ QString NfcdTagType2Handler::readAllData(){
 QString NfcdTagType2Handler::serial(){
     return m_data->serial();
 }
+
+#include "moc_nfcd_tagtype2_handler_src.cpp"
+#include "moc_nfcd_tagtype2_handler.cpp"

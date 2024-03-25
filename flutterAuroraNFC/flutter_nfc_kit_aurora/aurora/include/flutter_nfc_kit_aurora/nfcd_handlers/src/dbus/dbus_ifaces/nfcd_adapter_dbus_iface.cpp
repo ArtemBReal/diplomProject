@@ -37,3 +37,5 @@ QDBusPendingReply<bool> NfcdAdapterDBusIface::GetTargetPresent() {
 QDBusPendingReply<QList<QDBusObjectPath>> NfcdAdapterDBusIface::GetTags() {
     return asyncCallWithArgumentList(QStringLiteral("GetTags"), QList<QVariant>());
 }
+
+#include "moc_nfcd_adapter_dbus_iface.cpp"

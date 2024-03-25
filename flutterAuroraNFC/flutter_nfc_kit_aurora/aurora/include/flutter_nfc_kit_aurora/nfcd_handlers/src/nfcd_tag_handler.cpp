@@ -177,3 +177,6 @@ void NfcdTagHandler::release(){
 QString NfcdTagHandler::transceive(const QString &data){
     return m_data->transceive(data);
 }
+
+#include "moc_nfcd_tag_handler_src.cpp"
+#include "moc_nfcd_tag_handler.cpp"
