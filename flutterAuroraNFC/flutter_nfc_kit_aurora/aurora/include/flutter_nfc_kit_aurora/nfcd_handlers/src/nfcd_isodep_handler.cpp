@@ -86,3 +86,6 @@ NfcdIsoDepResult NfcdIsoDepHandler::transmit(uchar cla, uchar ins,
 void NfcdIsoDepHandler::reset(){
     m_data->reset();
 }
+
+#include "moc_nfcd_isodep_handler_src.cpp"
+#include "moc_nfcd_isodep_handler.cpp"

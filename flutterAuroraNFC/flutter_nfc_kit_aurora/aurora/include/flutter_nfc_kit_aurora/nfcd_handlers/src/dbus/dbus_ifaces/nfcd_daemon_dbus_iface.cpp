@@ -26,3 +26,5 @@ QDBusPendingReply<QList<QDBusObjectPath>> NfcdDaemonDBusIface::GetAdapters() {
 QDBusPendingReply<quint8> NfcdDaemonDBusIface::GetMode() {
     return asyncCallWithArgumentList(QStringLiteral("GetMode"), QList<QVariant>());
 }
+
+#include "moc_nfcd_daemon_dbus_iface.cpp"

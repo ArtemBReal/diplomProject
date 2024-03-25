@@ -43,3 +43,5 @@ QDBusPendingReply<QStringList> NfcdNdefDBusIface::GetInterfaces()
 {
     return asyncCallWithArgumentList(QStringLiteral("GetInterfaces"), QList<QVariant>());
 }
+
+#include "moc_nfcd_ndef_dbus_iface.cpp"

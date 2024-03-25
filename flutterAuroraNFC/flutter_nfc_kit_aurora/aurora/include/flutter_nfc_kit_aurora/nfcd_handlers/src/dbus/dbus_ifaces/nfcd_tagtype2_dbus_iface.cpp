@@ -62,3 +62,5 @@ QDBusPendingReply<QByteArray> NfcdTagType2DBusIface::ReadAllData(){
 QDBusPendingReply<QByteArray> NfcdTagType2DBusIface::GetSerial(){
     return asyncCallWithArgumentList(QStringLiteral("GetSerial"), QList<QVariant>());
 }
+
+#include "moc_nfcd_tagtype2_dbus_iface.cpp"

@@ -4,6 +4,7 @@ const QString NfcdConstants::nfcdService = QStringLiteral("org.sailfishos.nfc.da
 const QString NfcdConstants::nfcdPath = QStringLiteral("/");
 
 const char *NfcdConstants::nfcdDaemonIface = "org.sailfishos.nfc.Daemon";
+const char *NfcdConstants::nfcdAdapterIface = "org.sailfishos.nfc.Adapter";
 const char *NfcdConstants::nfcdIsoDepIface = "org.sailfishos.nfc.IsoDep";
 const char *NfcdConstants::nfcdNdefIface= "org.sailfishos.nfc.NDEF";
 const char *NfcdConstants::nfcdTagIface = "org.sailfishos.nfc.Tag";

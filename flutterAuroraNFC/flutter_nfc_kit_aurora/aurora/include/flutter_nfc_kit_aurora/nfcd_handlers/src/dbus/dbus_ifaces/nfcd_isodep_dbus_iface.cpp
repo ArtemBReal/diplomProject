@@ -27,3 +27,5 @@ QDBusPendingReply<QByteArray, uchar, uchar> NfcdIsoDepDBusIface::Transmit(uchar 
 QDBusPendingReply<> NfcdIsoDepDBusIface::Reset(){
     return asyncCallWithArgumentList(QStringLiteral("Reset"), QList<QVariant>());
 }
+
+#include "moc_nfcd_isodep_dbus_iface.cpp"
