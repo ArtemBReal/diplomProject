@@ -17,6 +17,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
+  String _daemonInterfaceVersion = 'Unknown';
   final _flutterNfcKitAuroraPlugin = FlutterNfcKitAurora();
 
   @override
@@ -37,12 +38,23 @@ class _MyAppState extends State<MyApp> {
       platformVersion = 'Failed to get platform version.';
     }
 
+    String daemonInterfaceVersion;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    // We also handle the message potentially returning null.
+    try {
+      daemonInterfaceVersion =
+          await _flutterNfcKitAuroraPlugin.getDaemonInterfaceVersion() ?? 'Unknown daemon interface version';
+    } on PlatformException {
+      daemonInterfaceVersion = 'Failed to get daemon interface version.';
+    }
+
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
     if (!mounted) return;
 
     setState(() {
+      _daemonInterfaceVersion = daemonInterfaceVersion;
       _platformVersion = platformVersion;
     });
   }
@@ -55,7 +67,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: Text('Nfcd daemon version: $_daemonInterfaceVersion\n'),
         ),
       ),
     );

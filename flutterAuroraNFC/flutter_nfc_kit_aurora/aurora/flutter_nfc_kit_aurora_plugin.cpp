@@ -1,4 +1,4 @@
-#include "flutter_nfc_kit_aurora_plugin.h"
+#include <flutter_nfc_kit_aurora/flutter_nfc_kit_aurora_plugin.h>
 #include <flutter/method-channel.h>
 #include <sys/utsname.h>
 
@@ -15,6 +15,10 @@ void FlutterNfcKitAuroraPlugin::onMethodCall(const MethodCall &call)
 
     if (method == "getPlatformVersion") {
         onGetPlatformVersion(call);
+        return;
+    }
+    if (method == "getDaemonInterfaceVersion"){
+        onGetDaemonInterfaceVersion(call);
         return;
     }
 
@@ -36,3 +40,15 @@ void FlutterNfcKitAuroraPlugin::unimplemented(const MethodCall &call)
 {
     call.SendSuccessResponse(nullptr);
 }
+
+void FlutterNfcKitAuroraPlugin::onGetDaemonInterfaceVersion(const MethodCall &call)
+{
+    QString daemonInterfaceVersion;
+    NfcdDaemonHandler daemonHandler;
+    daemonInterfaceVersion = daemonHandler.interfaceVersion();
+
+    call.SendSuccessResponse(daemonInterfaceVersion);
+
+}
+
+#include "moc_sensors_plus_aurora_plugin.cpp"

@@ -14,4 +14,10 @@ class MethodChannelFlutterNfcKitAurora extends FlutterNfcKitAuroraPlatform {
     final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
+
+  @override
+  Future<String?> getDaemonInterfaceVersion() async {
+    final version = await methodChannel.invokeMethod<String>('getDaemonInterfaceVersion');
+    return version;
+  }
 }

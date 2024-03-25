@@ -5,4 +5,8 @@ class FlutterNfcKitAurora {
   Future<String?> getPlatformVersion() {
     return FlutterNfcKitAuroraPlatform.instance.getPlatformVersion();
   }
+
+  Future<String?> getDaemonInterfaceVersion(){
+    return FlutterNfcKitAuroraPlatform.instance.getDaemonInterfaceVersion();
+  }
 }
