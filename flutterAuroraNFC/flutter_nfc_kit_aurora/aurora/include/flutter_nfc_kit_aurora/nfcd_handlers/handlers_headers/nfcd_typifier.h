@@ -98,7 +98,7 @@ struct NfcdIsoDepResult {
 
     Q_PROPERTY(QString response MEMBER response)
     Q_PROPERTY(uchar sw1 MEMBER sw1)
-    Q_PROPERTY(uchar sw2 MEMBER s2)
+    Q_PROPERTY(uchar sw2 MEMBER sw2)
 
 public:
     QString response { QString::null};

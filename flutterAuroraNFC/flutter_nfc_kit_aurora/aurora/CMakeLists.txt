@@ -21,19 +21,32 @@ find_package(Qt5 COMPONENTS Core DBus REQUIRED)
 pkg_check_modules(FlutterEmbedder REQUIRED IMPORTED_TARGET flutter-embedder)
 
 set(SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/flutter_nfc_kit_aurora_plugin.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/nfcd_isodep_handler.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/dbus_ifaces/nfcd_tag_dbus_iface.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/dbus_ifaces/nfcd_ndef_dbus_iface.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/dbus_ifaces/nfcd_daemon_dbus_iface.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/dbus_ifaces/nfcd_tagtype2_dbus_iface.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/dbus_ifaces/nfcd_adapter_dbus_iface.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/dbus_ifaces/nfcd_isodep_dbus_iface.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/dbus_ifaces/nfcd_isodep_dbus_iface.cpp   ##
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/handlers_headers/nfcd_typifier.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/handlers_headers/nfcd_tagtype2_handler.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/handlers_headers/nfcd_ndef_handler.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/handlers_headers/nfcd_tag_handler.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/handlers_headers/nfcd_adapter_handler.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/handlers_headers/nfcd_daemon_handler.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/handlers_headers/nfcd_isodep_handler.h ##
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/headers/nfcd_tagtype2_handler_src.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/headers/nfcd_ndef_handler_src.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/headers/nfcd_tag_handler_src.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/headers/nfcd_adapter_handler_src.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/headers/nfcd_daemon_handler_src.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/headers/nfcd_isodep_handler_src.h     ##
             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/dbus/nfcd_constants.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/nfcd_tagtype2_handler.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/nfcd_ndef_handler.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/nfcd_tag_handler.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/nfcd_adapter_handler.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/nfcd_daemon_handler.cpp)
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/nfcd_daemon_handler.cpp 
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/nfcd_handlers/src/nfcd_isodep_handler.cpp)   ##
 
 set(INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}/include
              ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}

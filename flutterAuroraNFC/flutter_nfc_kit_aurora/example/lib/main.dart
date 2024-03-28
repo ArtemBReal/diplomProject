@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -18,6 +20,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
   String _daemonInterfaceVersion = 'Unknown';
+  String _adapterInterfaceVersion = 'Unknown';
+  bool _adapterEnabled = false;
   final _flutterNfcKitAuroraPlugin = FlutterNfcKitAurora();
 
   @override
@@ -39,13 +43,19 @@ class _MyAppState extends State<MyApp> {
     }
 
     String daemonInterfaceVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
     try {
       daemonInterfaceVersion =
           await _flutterNfcKitAuroraPlugin.getDaemonInterfaceVersion() ?? 'Unknown daemon interface version';
     } on PlatformException {
       daemonInterfaceVersion = 'Failed to get daemon interface version.';
+    }
+
+    bool? adapterEnabled;
+    try {
+      adapterEnabled =
+          (await _flutterNfcKitAuroraPlugin.getAdapterEnabled() ?? false);
+    } on PlatformException {
+      adapterEnabled = false;
     }
 
     // If the widget was removed from the tree while the asynchronous platform
@@ -56,6 +66,8 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _daemonInterfaceVersion = daemonInterfaceVersion;
       _platformVersion = platformVersion;
+      //_adapterInterfaceVersion = adapterInterfaceVersion;
+      _adapterEnabled = adapterEnabled!;
     });
   }
 
@@ -67,7 +79,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Nfcd daemon version: $_daemonInterfaceVersion\n'),
+          child: Text('Nfcd daemon version: $_daemonInterfaceVersion\n Nfcd adapter enabled: $_adapterEnabled\n'),
         ),
       ),
     );

@@ -9,4 +9,8 @@ class FlutterNfcKitAurora {
   Future<String?> getDaemonInterfaceVersion(){
     return FlutterNfcKitAuroraPlatform.instance.getDaemonInterfaceVersion();
   }
+
+  Future<bool?> getAdapterEnabled(){
+    return FlutterNfcKitAuroraPlatform.instance.getAdapterEnabled();
+  }
 }

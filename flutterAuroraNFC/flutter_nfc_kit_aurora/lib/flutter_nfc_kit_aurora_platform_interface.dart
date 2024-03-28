@@ -30,4 +30,8 @@ abstract class FlutterNfcKitAuroraPlatform extends PlatformInterface {
   Future<String?> getDaemonInterfaceVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future<bool?> getAdapterEnabled() {
+    throw UnimplementedError('adapterEnabled() has not been implemented.');
+  }
 }

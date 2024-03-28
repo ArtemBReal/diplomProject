@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -19,5 +21,16 @@ class MethodChannelFlutterNfcKitAurora extends FlutterNfcKitAuroraPlatform {
   Future<String?> getDaemonInterfaceVersion() async {
     final version = await methodChannel.invokeMethod<String>('getDaemonInterfaceVersion');
     return version;
+  }
+
+  @override
+  Future<bool?> getAdapterEnabled() async {
+    try {
+    final version = await methodChannel.invokeMethod<bool>('getAdapterEnabled');
+    return version;
+  } on Exception catch (exception) {
+    return false;
+  }
+    
   }
 }

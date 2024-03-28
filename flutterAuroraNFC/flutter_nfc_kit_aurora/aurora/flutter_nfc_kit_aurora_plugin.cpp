@@ -1,5 +1,4 @@
 #include <flutter_nfc_kit_aurora/flutter_nfc_kit_aurora_plugin.h>
-#include <flutter_nfc_kit_aurora/nfcd_handlers/handlers_headers/nfcd_daemon_handler.h>
 #include <flutter/method-channel.h>
 #include <sys/utsname.h>
 
@@ -20,6 +19,10 @@ void FlutterNfcKitAuroraPlugin::onMethodCall(const MethodCall &call)
     }
     if (method == "getDaemonInterfaceVersion"){
         onGetDaemonInterfaceVersion(call);
+        return;
+    }
+    if (method == "getAdapterEnabled"){
+        onGetAdapterEnabled(call);
         return;
     }
 
@@ -51,4 +54,13 @@ void FlutterNfcKitAuroraPlugin::onGetDaemonInterfaceVersion(const MethodCall &ca
     call.SendSuccessResponse(daemonInterfaceVersion.toStdString());
 }
 
+void FlutterNfcKitAuroraPlugin::onGetAdapterEnabled(const MethodCall &call)
+{
+    bool adapterEnabled;
+    NfcdAdapterHandler adapterHandler;
+    adapterEnabled = adapterHandler.enabled();
+
+    call.SendSuccessResponse(adapterEnabled);
+}
 #include "moc_flutter_nfc_kit_aurora_plugin.cpp"
+#include "flutter_nfc_kit_aurora_plugin.h"

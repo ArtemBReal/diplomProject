@@ -157,5 +157,5 @@ NfcdAdaptersModel *NfcdDaemonHandler::adaptersModel(){
     return m_data->adaptersModel();
 }
 
-#include "moc_nfcd_daemon_handler_src.cpp"
+//#include "moc_nfcd_daemon_handler_src.cpp"
 #include "moc_nfcd_daemon_handler.cpp"
